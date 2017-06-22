@@ -7,7 +7,6 @@
 	</configSuffixes>
 	<enableImports><![CDATA[false]]></enableImports>
 	<configs>
-		<config>src/test/resources/module1/applicationContext1.xml</config>
 		<config>src/test/resources/module2/applicationContext2.xml</config>
 	</configs>
 	<autoconfigs>

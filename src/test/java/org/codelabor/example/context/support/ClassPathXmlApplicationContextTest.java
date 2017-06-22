@@ -97,5 +97,65 @@ public class ClassPathXmlApplicationContextTest {
 			logger.info(helloWorldService.sayHello());
 		}
 	}
+	
+	@Test
+	public void testClassPathXmlApplicationContextStringAntPath1() {
+		String configLocation = "**/applicationContext1.xml";
+		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocation)) {
+			HelloWorldService helloWorldService = applicationContext.getBean("helloWorldService1",
+					HelloWorldService.class);
+			logger.info(helloWorldService.sayHello());
+		}
+	}
+
+	@Test
+	public void testClassPathXmlApplicationContextStringAntPathAbsPath1() {
+		String configLocation = "module1/**/applicationContext1.xml";
+		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocation)) {
+			HelloWorldService helloWorldService = applicationContext.getBean("helloWorldService1",
+					HelloWorldService.class);
+			logger.info(helloWorldService.sayHello());
+		}
+	}
+
+	@Test
+	public void testClassPathXmlApplicationContextStringAntPathWithPrefix1() {
+		String configLocation = "classpath:**/applicationContext1.xml";
+		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocation)) {
+			HelloWorldService helloWorldService = applicationContext.getBean("helloWorldService1",
+					HelloWorldService.class);
+			logger.info(helloWorldService.sayHello());
+		} 
+	}
+
+	@Test
+	public void testClassPathXmlApplicationContextStringAntPathAbsPathWithPrefix1() {
+		String configLocation = "classpath:**/module1/applicationContext1.xml";
+		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocation)) {
+			HelloWorldService helloWorldService = applicationContext.getBean("helloWorldService1",
+					HelloWorldService.class);
+			logger.info(helloWorldService.sayHello());
+		}
+	}
+
+	@Test
+	public void testClassPathXmlApplicationContextStringAntPathWithWildcardPrefix1() {
+		String configLocation = "classpath*:**/applicationContext1.xml";
+		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocation)) {
+			HelloWorldService helloWorldService = applicationContext.getBean("helloWorldService1",
+					HelloWorldService.class);
+			logger.info(helloWorldService.sayHello());
+		} 
+	}
+
+	@Test
+	public void testClassPathXmlApplicationContextStringAntPathAbsPathWithWildcardPrefix1() {
+		String configLocation = "classpath*:module1/applicationContext1.xml";
+		try (ClassPathXmlApplicationContext applicationContext = new ClassPathXmlApplicationContext(configLocation)) {
+			HelloWorldService helloWorldService = applicationContext.getBean("helloWorldService1",
+					HelloWorldService.class);
+			logger.info(helloWorldService.sayHello());
+		}
+	}
 
 }

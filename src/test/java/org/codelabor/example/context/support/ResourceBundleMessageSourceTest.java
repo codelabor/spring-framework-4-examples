@@ -33,6 +33,9 @@ public class ResourceBundleMessageSourceTest {
 		String messageKorean = messageSource.getMessage("code1", null, Locale.KOREAN);
 		logger.info("code1(Locale.KOREAN): {}", messageKorean);
 
+		String messageJapanese = messageSource.getMessage("code1", null, Locale.JAPANESE);
+		logger.info("code1(Locale.JAPANESE): {}", messageJapanese);
+
 		String messageEnglish = messageSource.getMessage("code1", null, Locale.ENGLISH);
 		logger.info("code1(Locale.ENGLISH): {}", messageEnglish);
 
@@ -41,6 +44,15 @@ public class ResourceBundleMessageSourceTest {
 
 		String messageUK = messageSource.getMessage("code1", null, Locale.UK);
 		logger.info("code1(Locale.UK): {}", messageUK);
+
+		messageEnglish = messageSource.getMessage("code2", null, Locale.ENGLISH);
+		logger.info("code2(Locale.ENGLISH): {}", messageEnglish);
+
+		messageUS = messageSource.getMessage("code2", null, Locale.US);
+		logger.info("code2(Locale.US): {}", messageUS);
+
+		messageUK = messageSource.getMessage("code2", null, Locale.UK);
+		logger.info("code2(Locale.UK): {}", messageUK);
 	}
 
 	@Test

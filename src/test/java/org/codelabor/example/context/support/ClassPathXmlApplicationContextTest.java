@@ -1,7 +1,5 @@
 package org.codelabor.example.context.support;
 
-import java.io.FileNotFoundException;
-
 import org.codelabor.example.helloworld.service.HelloWorldService;
 import org.junit.After;
 import org.junit.AfterClass;
